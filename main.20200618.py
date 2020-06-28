@@ -53,7 +53,7 @@ class ChinazInfo:
         page_size = 20
         amount = page_no * page_size
         while 1:
-            if len(results) == amount:
+            if len(results) == amount or page_no > 10:
                 break
             data = {
                 'Kw': organizer,
@@ -101,4 +101,4 @@ class ChinazInfo:
 
 if __name__ == "__main__":
     chinaz = ChinazInfo()
-    print(chinaz.get_beian('dbappsecurity.com.cn'))
+    print(chinaz.get_beian('baidu.com'))
